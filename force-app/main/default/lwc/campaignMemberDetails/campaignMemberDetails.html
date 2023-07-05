@@ -1,0 +1,32 @@
+<template>
+    <lightning-button label="ボタン1"
+                  name="button1"
+                  onclick={handleClick}>
+    </lightning-button>
+    <template if:true={campaignMemberData.data}>
+        <lightning-card title="Campaign Member Details">
+            <lightning-record-view-form
+            record-id={campaignMemberData.data.Id}
+            object-api-name="CampaignMember"
+        >
+                <div class="slds-p-around_medium">
+                    <div class="slds-grid slds-gutters">
+                        <div class="slds-col">
+                            <lightning-output-field field-name="FirstName" ></lightning-output-field>
+                        </div>
+                        <div class="slds-col">
+                            <lightning-output-field field-name="LastName" ></lightning-output-field>
+                        </div>
+                        <div class="slds-col">
+                            <lightning-output-field field-name="Email" ></lightning-output-field>
+                        </div>
+                        <!-- Add more fields as needed -->
+                    </div>
+                </div>
+            </lightning-record-view-form>
+        </lightning-card>
+    </template>
+    <template if:false={campaignMemberData.data}>
+        <p>No Campaign Member record found.</p>
+    </template>
+</template>

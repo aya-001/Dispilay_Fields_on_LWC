@@ -4,7 +4,7 @@ import getCampaignMemberRecord from '@salesforce/apex/CamaignMemberDetailsContro
 
 export default class campaignMemberDetails extends LightningElement {
     @api recordId; // Task record's ID
-    FirstName;
+    //FirstName;
 
     @wire(getCampaignMemberRecord, { taskId: '$recordId' })
     campaignMemberData

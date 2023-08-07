@@ -1,0 +1,15 @@
+<template>
+    <!-- List View on the Task age  -->
+    <!-- Add the custom filter component -->
+    <c-campaign-member-filter onfilterchange={handleFilterChange}></c-campaign-member-filter>
+    <!-- Display the filtered Campaign Members -->
+    <template if:true={filteredCampaignMembers}>
+        <ul>
+            <template for:each={filteredCampaignMembers} for:item="member">
+                <li key={member.Id}>
+                    {member.Name}: {member.Custom_Field__c}
+                </li>
+            </template>
+        </ul>
+    </template>
+</template>

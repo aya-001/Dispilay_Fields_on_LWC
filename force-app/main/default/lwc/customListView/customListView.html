@@ -1,0 +1,11 @@
+<template>
+    <div class="slds-grid slds-gutters">
+        <div class="slds-col slds-size_1-of-3">
+            <lightning-input label="Custom Field Filter" onchange={handleCustomFieldChange}></lightning-input>
+        </div>
+        <!-- Add more filter options as needed -->
+        <div class="slds-col slds-size_1-of-3">
+            <lightning-button label="Apply Filter" onclick={applyFilter} variant="brand"></lightning-button>
+        </div>
+    </div>
+</template>

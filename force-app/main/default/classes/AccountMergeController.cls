@@ -26,16 +26,24 @@ global with sharing class AccountMergeController {
         // Initialize the output list
         List<MergeOutput> outputs = new List<MergeOutput>();
         
+
         // Loop through the input list
+        //assign success or error result in each loop
         for (MergeInput input : inputs) {
             // Get the master record and the records to be merged
-            Account master = [SELECT Id, Name FROM Account WHERE Id = :input.masterId];
-            List<Account> duplicates = [SELECT Id, Name FROM Account WHERE Id IN :input.mergeIds];
+            //query record based on input.masterId, inut.margeIds
+            Account master = [SELECT Id, Name, Email, PersonMobilePhone, Phone, ShippingAddress FROM Account WHERE Id = :input.masterId];
+            //List<Account> duplicates = [SELECT Id, Name, Email, PersonMobilePhone, Phone, ShippingAddress FROM Account WHERE Id IN :input.mergeIds];
             
             // Update the master record with the input information
+            // Add fields to be updated
             master.Name = input.accMergeRecordInfo.Name;
-            // Add any other fields that you want to update
+            master.Email = input.accMergeRecordInfo.Email;
+            master.PersonMobilePhone = input.accMergeRecordInfo.PersonMobilePhone;
+            master.Phone = input.accMergeRecordInfo.Phone;
+            master.ShippingAddress = input.accMergeRecordInfo.ShippingAddress;
             
+    
             // Create an output object
             MergeOutput output = new MergeOutput();
             

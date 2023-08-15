@@ -1,0 +1,26 @@
+<!-- Use Standard List Controller to use multiple records -->
+<apex:page standardController="Business_Report__c" extensions="VFCustomButtonRequestApprovalController" recordSetVar="reports">
+  <apex:form>
+    <apex:pageBlock title="Business Reports">
+      <apex:pageBlockButtons>
+        <apex:commandButton value="Submit" action="{!submitForApproval}" />
+        <apex:commandButton value="Cancel" action="{!doCancel}" />
+      </apex:pageBlockButtons>
+      <apex:pageBlockTable value="{!reports}" var="report">
+        <!-- <apex:column>
+          <apex:inputCheckbox value="{!report.selected}" />
+        </apex:column> -->
+        <apex:column value="{!report.Name}" />
+        <apex:column value="{!report.Amount__c}" />
+        <apex:column value="{!report.Date_of_Today__c}" />
+        <apex:column value="{!report.Due_Date__c}" />
+        <apex:column value="{!report.Report_Details__c}" />
+        <apex:column value="{!report.OwnerId}" />
+        <apex:column value="{!report.Submitted_for_approval__c}" />
+        <apex:column value="{!report.Approved__c}" />
+        <!-- Other fields here -->
+      </apex:pageBlockTable>
+    </apex:pageBlock>
+    <!-- Cancel Button   -->
+  </apex:form>
+</apex:page>

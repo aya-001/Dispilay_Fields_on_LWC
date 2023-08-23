@@ -1,5 +1,5 @@
-<!-- Use Standard List Controller to use multiple records -->
 
+<!-- Use Standard List Controller to use multiple records with recordSetVar, -->
 <apex:page standardController="Business_Report__c" extensions="VFCustomButtonRequestApprovalController" 
 recordSetVar="reports" lightningStylesheets="true">
 <!-- css style -->
@@ -14,7 +14,7 @@ recordSetVar="reports" lightningStylesheets="true">
              text-transform: uppercase !important;
              border: solid 1px rgb(32, 32, 66) !important;
              border-radius: 22px !important;
-             background-image: repeating-conic-gradient(rgb(138, 167, 229),white 50%) !important;
+             background-image: repeating-conic-gradient(rgb(179, 200, 245),white 50%) !important;
         }
 
         .headerRow {
@@ -28,6 +28,17 @@ recordSetVar="reports" lightningStylesheets="true">
         .pbBody {
             border-radius: 12px !important;
             border: solid 1px rgb(45, 54, 95)  !important;
+        }
+
+        .messa {
+            padding-left: 10px !important;
+            text-transform: capitalize !important;
+            background-color: white !important;
+            /* opacity: 0.5 !important; */
+            display:block; 
+            padding-bottom:10px;
+            color: rgb(7, 51, 7)!important;
+            font-size: 12px !important;
         }
 
         .rows {
@@ -44,16 +55,11 @@ recordSetVar="reports" lightningStylesheets="true">
             opacity: 0.9 !important;
          }
 
-         /* .rows:hover {
-            color: rgb(197, 197, 245) !important;
-            opacity: 50% !important;
-         } */
-
          .button{
             /* background: rgb(198, 225, 240) !important; */
             background: linear-gradient(0deg, rgb(175, 168, 243),rgb(198, 225, 240))!important; 
             border-radius: 10px !important;
-            border: 2px solid rgb(10, 72, 143) !important;
+            border: 1px solid rgb(10, 72, 143) !important;
             color: rgb(21, 21, 65) !important;
             font-weight: bold !important;
             font-size: 13px !important;
@@ -71,11 +77,14 @@ recordSetVar="reports" lightningStylesheets="true">
   <!-- HTML -->
   <apex:form>
     <apex:pageBlock title="Business Reports">
+        <apex:outputText value="※color,style are modified to practice override CSS on Visual Force" styleClass="messa" />
+   
       <apex:pageBlockButtons>
         <!-- <apex:commandButton value="Submit" action="{!submitForApproval}" /> -->
         <apex:commandButton action="{!submitForApproval}" Value="Submit" styleClass="button"/> 
         <apex:commandButton action="{!doCancel}" value="Cancel" styleClass="button" />
       </apex:pageBlockButtons>
+      
       <apex:pageBlockTable value="{!reports}" var="report" styleClass="rows">
         <apex:column value="{!report.Name}" />
         <apex:column value="{!report.Amount__c}" />

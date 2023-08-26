@@ -1,0 +1,19 @@
+<apex:page standardController="Account" extensions="VFCreateersonAccountButtonController" lightningStylesheets="true">
+    <!-- Secify the record type -->
+<apex:form>
+    <apex:pageBlock title="新規：勤務先アカウント">
+        <!-- <apex:inputField value="{!account.Name}"/> -->
+            <apex:pageBlockSection title="" columns="2">
+                <apex:inputText label="姓" value="{!lastName}" />
+                <apex:inputText label="名"  value="{!firstName}"/> 
+            <!-- <apex:inputField value="{!account.firstName}"/>
+            <apex:inputField value="{!account.LastName}"/> -->
+           <!--  <apex:inputField value="{!account.RecordTypeId}"/> -->
+        </apex:pageBlockSection>
+        <apex:pageBlockButtons>
+            <apex:commandButton action="{!doSave}" value="Save"/>
+            <apex:commandButton action="{!doCancel}" value="Cancel"/>
+        </apex:pageBlockButtons>
+    </apex:pageBlock>
+</apex:form>
+</apex:page>

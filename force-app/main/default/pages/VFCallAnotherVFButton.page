@@ -1,0 +1,11 @@
+<!-- apex:page standardController="Account" lightningStylesheets="true" extensions="VFCallAnotherVFButtonCOntroller">
+    <apex:form>
+        <apex:commandButton value="Call Another VF Page" action="{!callAnotherVFPage}" />
+    </apex:form>
+</apex:page> -->
+<apex:page standardController="Account" lightningStylesheets="true" extensions="VFCallAnotherVFButtonCOntroller">
+    <apex:form>
+        <!-- Use URLFOR to generate a relative URL for the other VF page -->
+        <apex:commandButton value="Buttun Another VF Page" action="{!URLFOR($Page.VFCreateersonAccountButton, null, [accountId=account.Id])}" />
+    </apex:form>
+</apex:page>

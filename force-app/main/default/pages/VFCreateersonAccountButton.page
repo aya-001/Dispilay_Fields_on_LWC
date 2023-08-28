@@ -17,3 +17,27 @@
     </apex:pageBlock>
 </apex:form>
 </apex:page>
+
+
+<!-- 　　　－－－－－－－－－－－－－－－－－－－－－－
+<apex:page standardController="Account" extensions="VFCreateersonAccountButtonController" lightningStylesheets="true"> -->
+    <!-- Secify the record type -->
+
+<!-- <apex:form >
+   <apex:pageBlock title="新規:PA顧客(勤務先)">
+            <apex:pageBlockSection title="" columns="2">
+                 <apex:inputField label="名前" value="{!account.Name}" required="true"/> 
+                 <apex:inputField label="法人名（カナ）" value="{!account.Corporate_Name_Input_Kana__c}" required="true"/> 
+                <apex:inputText label="業種" value="{!account.Industry}"/> 
+                  <apex:inputField label="郵便番号" value="{!account.Account_AddressMaster_PostalCode__c}"/>
+                <apex:inputText label="地番・様方部（漢字）" value="{!account.Account_Samakata_Kanji__c}"/> 
+                <apex:inputText label="地番・様方部（カナ）" value="{!account.Account_Samakata_Kana__c}"/> 
+        </apex:pageBlockSection>
+        <apex:pageBlockButtons >
+            <apex:commandButton action="{!doSave}" value="Save"/>
+            <apex:commandButton action="{!doCancel}" value="Cancel"/>
+        </apex:pageBlockButtons>
+    </apex:pageBlock>
+</apex:form>
+</apex:page> -->
+                          

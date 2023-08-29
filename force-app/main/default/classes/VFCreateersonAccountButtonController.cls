@@ -1,3 +1,4 @@
+/* Controller of VF for Custom Button on Detail Page  */
 public with sharing class VFCreateersonAccountButtonController {
     
     ApexPages.StandardController returnPage = null;//page to return after submit
@@ -7,7 +8,6 @@ public with sharing class VFCreateersonAccountButtonController {
     public string lastName {get; set;}
     public Account account {get; set;}
 
-    
 
     //constructor
     public VFCreateersonAccountButtonController(ApexPages.StandardController controller) {
@@ -33,6 +33,11 @@ public with sharing class VFCreateersonAccountButtonController {
         return returnPage.cancel();
     }
 
+    public PageReference doCancel(){
+        return returnPage.cancel();
+    }
+
+}
 
  /*
 //-------------------------------------------------------------------------
@@ -67,6 +72,7 @@ public with sharing class VFCreateersonAccountButtonController {
         //create a new account record with the selected record type ID
           Account newAccount = new Account(RecordTypeId = recordTypeIdvar, Name = account.Name, Corporate_Name_Input_Kana__c = account.Corporate_Name_Input_Kana__c, Industry = account.Industry, Account_Samakata_Kanji__c = account.Account_Samakata_Kanji__c, Account_Samakata_Kana__c = account.Account_Samakata_Kana__c,  Account_AddressMaster_PostalCode__c = account.Account_AddressMaster_PostalCode__c);
          System.debug('Insert Account ;' + newAccount);
+
         //insert the new account record
         insert newAccount; 
 

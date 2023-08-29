@@ -1,0 +1,20 @@
+<!-- VF placed on detail page  -->
+<apex:page standardController="Account" extensions="VFCallAnotherVFButtonCOntroller" lightningStylesheets="true">
+    <!-- Secify the record type -->
+<apex:form>
+    <apex:pageBlock title="新規：勤務先アカウント">
+        <!-- <apex:inputField value="{!account.Name}"/> -->
+            <apex:pageBlockSection title="" columns="2">
+                <apex:inputField label="名前" value="{!account.Name}" />
+                <apex:inputField label="業種"  value="{!account.Industry}"/> 
+            <!-- <apex:inputField value="{!account.firstName}"/>
+            <apex:inputField value="{!account.LastName}"/> -->
+           <!--  <apex:inputField value="{!account.RecordTypeId}"/> -->
+        </apex:pageBlockSection>
+        <apex:pageBlockButtons>
+            <apex:commandButton action="{!doSave}" value="Save"/>
+            <apex:commandButton action="{!doCancel}" value="Cancel" immediate="true"/>
+        </apex:pageBlockButtons>
+    </apex:pageBlock>
+</apex:form>
+</apex:page>

@@ -22,6 +22,7 @@ global with sharing class AccountMergeController {
 
     // Mark the method as invocable
     //List<MergeInput> to create a list of merge operations for sObject type
+     //MergeOutput, MergeInput are generic class (called MergeOutput, MergeInput)
     @InvocableMethod(label='Merge Accounts')
     global static List<MergeOutput> mergeAccounts(List<MergeInput> inputs) {
         // Initialize the output list

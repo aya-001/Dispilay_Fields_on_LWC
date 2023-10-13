@@ -31,7 +31,7 @@
             <apex:pageBlockSection title="" columns="2">
                  <apex:inputField label="名前" value="{!account.Name}" required="true"/> 
                  <apex:inputField label="法人名（カナ）" value="{!account.Corporate_Name_Input_Kana__c}" required="true"/> 
-                <apex:inputText label="業種" value="{!account.Industry}"/> 
+                <apex:inputField label="業種" value="{!account.Industry}"/> 
                   <apex:inputField label="郵便番号" value="{!account.Account_AddressMaster_PostalCode__c}"/>
                 <apex:inputText label="地番・様方部（漢字）" value="{!account.Account_Samakata_Kanji__c}"/> 
                 <apex:inputText label="地番・様方部（カナ）" value="{!account.Account_Samakata_Kana__c}"/> 
